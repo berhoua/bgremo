@@ -1,23 +1,25 @@
-import ImageView from '@/components/ImageView'
-import { Metadata } from 'next'
+import { Metadata } from "next";
 
-type Props = {
-    params: { id: string }
+export const metadata: Metadata = {
+  title: "Image Details - AI Background Remover",
+  description: "View and edit your processed image",
+};
+
+export function generateStaticParams() {
+  return [{ id: "placeholder" }];
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    // read route params
-    const id = params.id
-    return {
-        title: `image ${id}`,
-        description: `image ${id}`,
-    }
+interface Props {
+  params: {
+    id: string;
+  };
 }
 
 export default function page({ params: { id } }: Props) {
-    return (
-        <section className='mx-auto flex flex-1 flex-col gap-10 px-4 py-10 md:w-[840px]'>
-            <ImageView rowId={id} />
-        </section>
-    )
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-4">Image Details</h1>
+      <p>This page will be populated with client-side data for ID: {id}</p>
+    </div>
+  );
 }

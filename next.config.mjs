@@ -8,8 +8,20 @@ const __dirname = path.dirname(__filename)
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: false,
+    output: 'export',
+    trailingSlash: true,
+    distDir: 'dist',
     images: {
         unoptimized: true,
+        domains: ['localhost'],
+        remotePatterns: [
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '3000',
+                pathname: '/**',
+            },
+        ],
     },
     webpack: (config, { isServer }) => {
         config.resolve = {

@@ -2,7 +2,7 @@
 
 import { useRowIds, useStore } from '@/lib/schema';
 import { cn } from '@/lib/utils';
-import { AutoModel, AutoProcessor, PreTrainedModel, Processor, RawImage, env } from '@huggingface/transformers';
+import { AutoModel, AutoProcessor, PreTrainedModel, Processor, RawImage } from '@huggingface/transformers';
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -114,7 +114,7 @@ export default function DropZone() {
         },
     });
 
-    const processImages = async () => {
+    const processImages = useCallback(async () => {
         try {
             const model = modelRef.current;
             const processor = processorRef.current;
@@ -200,7 +200,7 @@ export default function DropZone() {
         } finally {
             setIsProcessing(false);
         }
-    };
+    }, [rowIds, selectedColor, storeReference]);
 
     // Effect to load the model
     useEffect(() => {
@@ -299,32 +299,14 @@ export default function DropZone() {
     // Effect to handle image processing
     useEffect(() => {
         const processIfNeeded = async () => {
-            if (isLoadingModel || !storeReference?.hasTable("images") || rowIds.length === 0 || isProcessingComplete || isProcessing) {
-                return;
-            }
-
-            // Check if we need to process (no transformed URL exists)
-            const needsProcessing = !storeReference.getCell("images", rowIds[0], "transformedImageUrl");
-            if (!needsProcessing) {
-                return;
-            }
-
-            setIsProcessing(true);
-            try {
-                const success = await processImages();
-                if (success) {
-                    setIsProcessingComplete(true);
-                    setShowProcessed(true);
-                }
-            } catch (error) {
-                console.error('Error during processing:', error);
-            } finally {
-                setIsProcessing(false);
+            if (autoProcessRef.current && rowIds.length > 0) {
+                setIsProcessing(true);
+                await processImages();
             }
         };
 
         processIfNeeded();
-    }, [isLoadingModel, storeReference, rowIds, isProcessingComplete, isProcessing]);
+    }, [rowIds, processImages]);
 
     // Cleanup effect when component unmounts
     useEffect(() => {

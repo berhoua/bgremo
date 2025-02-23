@@ -6,6 +6,12 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'image_ymZOY',
+    'banner1_OkOk1',
+    'banner2_vEFCM',
+    'banner3_j1JMk'
+  ],
   darkMode: ["class"],
   theme: {
     container: {

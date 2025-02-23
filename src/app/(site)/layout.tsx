@@ -1,5 +1,6 @@
 'use client';
 
+import { ReactNode } from 'react';
 import { Footer } from "@/components/Footer";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ShareButton } from "@/components/ShareButton";
@@ -9,7 +10,7 @@ import Link from "next/link";
 import { LuHome, LuMenu, LuX } from "react-icons/lu";
 import { useState, useEffect } from "react";
 
-export default function SiteLayout({ children, modal }: { children: React.ReactNode; modal: React.ReactNode }) {
+export default function SiteLayout({ children }: { children: ReactNode }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // Close mobile menu when screen size changes to desktop
@@ -171,7 +172,6 @@ export default function SiteLayout({ children, modal }: { children: React.ReactN
                 )}
             </nav>
             {children}
-            {modal}
             <Footer />
         </main>
     );
