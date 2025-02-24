@@ -299,14 +299,14 @@ export default function DropZone() {
     // Effect to handle image processing
     useEffect(() => {
         const processIfNeeded = async () => {
-            if (autoProcessRef.current && rowIds.length > 0) {
+            if (!isLoadingModel && autoProcessRef.current && rowIds.length > 0) {
                 setIsProcessing(true);
                 await processImages();
             }
         };
 
         processIfNeeded();
-    }, [rowIds, processImages]);
+    }, [rowIds, processImages, isLoadingModel]);
 
     // Cleanup effect when component unmounts
     useEffect(() => {
