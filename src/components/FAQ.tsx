@@ -6,27 +6,27 @@ export default function FAQ() {
     const faqs = [
         {
             question: "How does the background removal work?",
-            answer: "Our cutting-edge AI technology makes background removal effortless! Using advanced machine learning algorithms, our tool instantly analyzes your image to identify the main subject and separate it from the background. The AI precisely detects edges, handles complex details like hair and transparent objects, and removes the background in seconds. Whether you&apos;re working with product photos, portraits, or any other images, you&apos;ll get clean, professional results with just one click."
+            answer: "Our AI technology makes background removal effortless! Simply upload your image, and our tool will instantly detect and remove the background - even handling tricky details like hair and transparent objects. Get professional results with just one click."
         },
         {
             question: "What image formats are supported?",
-            answer: "We support all popular image formats including JPEG, JPG, WEBP and PNG files. To ensure the best quality results, we accept images up to 40MB in size. This generous size limit allows you to work with high-resolution photos while maintaining excellent output quality. For optimal results, we recommend using clear, well-lit images with good contrast between the subject and background."
+            answer: "We support JPEG, JPG, WEBP, and PNG files up to 40MB in size. For best results, use clear, well-lit images with good contrast between the subject and background."
         },
         {
             question: "Is there a limit to how many images I can process?",
-            answer: "No limits! You can process as many images as you need. Each image is carefully analyzed by our AI to deliver optimal background removal. There&apos;s no daily limit - you can keep processing images, and it&apos;s completely free!"
+            answer: "No limits! Process as many images as you need - it's completely free with no daily restrictions."
         },
         {
             question: "Can I add a custom background after removal?",
-            answer: "Yes, and the possibilities are endless! After removing the background, you have several options: make it transparent (perfect for logos and product shots), choose from our collection of solid colors, Whether you need a professional white background for e-commerce or a creative scene for social media, we&apos;ve got you covered!"
+            answer: "Yes! After removal, you can make the background transparent (perfect for logos and products) or choose from our collection of solid colors. Perfect for e-commerce or social media content."
         },
         {
-            question: "What&apos;s the quality of the output image?",
-            answer: "We prioritize image quality above everything else! Your output image maintains the same resolution and dimensions as the original, with no quality loss during processing. Our AI ensures precise edge detection and smooth transitions, particularly around complex areas like hair or semi-transparent objects. You can download your processed images in high resolution, perfect for professional use in print, e-commerce, or digital media. Plus, our tool preserves image metadata and color accuracy throughout the process."
+            question: "What's the quality of the output image?",
+            answer: "Your processed image will maintain the same high quality as the original! There's no loss in resolution or dimensions, and we ensure precise edge detection - even for tricky areas like hair. The output is perfect for professional use, from e-commerce to print."
         },
         {
             question: "Do I need to create an account to use the tool?",
-            answer: "No account needed - just upload and go! We&apos;ve designed our tool to be instantly accessible with no barriers. There&apos;s no registration required, no email needed, and no personal information collected. Simply visit the website, drop your image, and get your processed result right away. This commitment to simplicity means you can start removing backgrounds immediately, whether you&apos;re a one-time user or a regular visitor. It&apos;s truly free and hassle-free!"
+            answer: "No account needed! Simply upload your image and get your result instantly. No registration, no email, and no personal information required - it's completely free and easy to use."
         }
     ];
 

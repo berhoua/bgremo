@@ -121,37 +121,38 @@ export default function HomePage() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#FF7170]/10 via-[#6C5CE7]/10 to-[#FFB185]/10 rounded-full blur-3xl -z-10"></div>
             </div>
             {/* Hero Section */}
-            <div className="flex w-full max-w-[1200px] items-center gap-8">
-                {/* Left Image */}
-                <div className="relative hidden flex-1 lg:block">
-                    <div className="relative aspect-square w-full">
-                        <Image
-                            src="/hero_remove.webp"
-                            alt="Example image"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
-                    </div>
-                </div>
-
-                {/* Right Dropzone */}
-                <div className="w-full max-w-[640px]">
+            <div className="flex w-full max-w-[1200px] items-center justify-center">
+                {/* Centered Dropzone */}
+                <div className="w-full max-w-[700px]">
                     <div
                         {...getRootProps()}
                         className={cn(
-                            "relative w-full rounded-2xl border-2 border-dashed p-8 transition-all duration-300 bg-white/50 backdrop-blur-sm",
+                            "relative w-full rounded-2xl border-2 border-dashed p-10 transition-all duration-300 bg-white/60 backdrop-blur-sm overflow-hidden",
                             isDragAccept ? "border-[#6366F1] bg-[#6366F1]/5" :
                                 isDragReject ? "border-red-500 bg-red-50" :
                                     isDragActive ? "border-[#6366F1] bg-[#6366F1]/5" : "border-gray-300 hover:border-[#6366F1]/50 hover:bg-gray-50/50"
                         )}
                         style={{
-                            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.04)"
+                            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.08)"
                         }}
                     >
+                        {/* Decorative elements */}
+                        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#6366F1]/20 to-[#EC4899]/20 rounded-full blur-2xl"></div>
+                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-tr from-[#EC4899]/20 to-[#6366F1]/20 rounded-full blur-2xl"></div>
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[500px] max-h-[500px] bg-gradient-to-r from-[#6366F1]/5 via-[#EC4899]/5 to-[#6366F1]/5 rounded-full blur-3xl opacity-50"></div>
+                            
+                            {/* Animated dots */}
+                            <div className="absolute top-6 left-6 w-2 h-2 bg-[#6366F1] rounded-full animate-pulse"></div>
+                            <div className="absolute top-6 right-6 w-2 h-2 bg-[#EC4899] rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+                            <div className="absolute bottom-6 left-6 w-2 h-2 bg-[#EC4899] rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+                            <div className="absolute bottom-6 right-6 w-2 h-2 bg-[#6366F1] rounded-full animate-pulse" style={{ animationDelay: "1.5s" }}></div>
+                        </div>
+
                         <input {...getInputProps()} className="hidden" accept="image/jpeg,image/png" aria-hidden="true" />
                         
-                        <div className="flex flex-col items-center justify-center text-center space-y-3">
+                        <div className="flex flex-col items-center justify-center text-center space-y-6 relative z-10">
+                            {/* Original Dropzone Image */}
                             <div className="relative group cursor-pointer">
                                 <div className="absolute -inset-2 bg-gradient-to-r from-[#6366F1] to-[#EC4899] rounded-full opacity-20 group-hover:opacity-100 blur transition duration-500"></div>
                                 <Image
@@ -165,51 +166,79 @@ export default function HomePage() {
                             </div>
                             
                             <div className="space-y-2">
-                                <h2 className="text-xl font-semibold text-gray-900">
+                                <h2 className="text-2xl font-bold text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-[#6366F1] to-[#EC4899]">
                                     Drop your image here
                                 </h2>
-                                <p className="text-sm text-gray-500">
-                                    or click to browse
+                                <p className="text-sm text-gray-600">
+                                    or click to browse from your device
                                 </p>
                             </div>
 
                             <button
                                 type="button"
-                                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#6366F1] to-[#EC4899] px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:ring-offset-2"
+                                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#6366F1] to-[#EC4899] px-8 py-3 text-base font-medium text-white transition-all duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:ring-offset-2 shadow-lg shadow-[#6366F1]/20"
                             >
-                                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                                 Select Image
                             </button>
 
-                            <div className="flex items-center gap-4 text-xs text-gray-500">
+                            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500 mt-2">
                                 <span className="flex items-center">
                                     <svg className="w-4 h-4 mr-1 text-[#6366F1]" viewBox="0 0 20 20" fill="currentColor">
                                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                                     </svg>
                                     JPEG, JPG, PNG
                                 </span>
-                                <span>•</span>
+                                <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                                 <span className="flex items-center">
                                     <svg className="w-4 h-4 mr-1 text-[#6366F1]" viewBox="0 0 20 20" fill="currentColor">
                                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                                     </svg>
                                     Up to 40MB
                                 </span>
+                                <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                                <span className="flex items-center">
+                                    <svg className="w-4 h-4 mr-1 text-[#6366F1]" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                                    </svg>
+                                    Instant Processing
+                                </span>
                             </div>
                         </div>
 
                         {isDragActive && (
-                            <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-[#6366F1]/5 backdrop-blur-sm transition-all duration-300">
-                                <div className="flex items-center text-lg font-medium text-[#6366F1]">
-                                    <svg className="w-6 h-6 mr-2 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-                                    </svg>
-                                    Drop to upload
+                            <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#6366F1]/30 to-[#EC4899]/30 backdrop-blur-md transition-all duration-300 z-20">
+                                <div className="flex flex-col items-center text-white">
+                                    <div className="w-16 h-16 mb-4 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                                        <svg className="w-8 h-8 animate-bounce text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                                        </svg>
+                                    </div>
+                                    <span className="text-xl font-bold drop-shadow-md">Drop to upload</span>
+                                    <span className="text-sm text-white/80">and remove background instantly</span>
                                 </div>
                             </div>
                         )}
+                    </div>
+                    
+                    {/* Feature badges below dropzone */}
+                    <div className="flex flex-wrap justify-center gap-3 mt-6">
+                        {[
+                            { icon: "⚡", label: "Instant AI Processing" },
+                            { icon: "🔒", label: "100% Private & Secure" },
+                            { icon: "💯", label: "High-Quality Results" },
+                            { icon: "🎁", label: "Completely Free" }
+                        ].map((feature, index) => (
+                            <div 
+                                key={index} 
+                                className="flex items-center gap-2 bg-white/70 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium text-gray-700 shadow-sm border border-gray-100"
+                            >
+                                <span>{feature.icon}</span>
+                                <span>{feature.label}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
