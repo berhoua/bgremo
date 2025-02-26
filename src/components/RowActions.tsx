@@ -56,7 +56,7 @@ export default function RowActions({ rowId }: Props) {
                 </ButtonAria>
                 <Popover placement='bottom right' className="origin-top-left overflow-auto rounded-lg border border-accent bg-foreground/50 p-1 shadow-lg ring-1 ring-accent/5 backdrop-blur-md fill-mode-forwards entering:animate-in entering:fade-in entering:zoom-in-95 exiting:animate-out exiting:fade-out exiting:zoom-out-95">
                     <Menu className="outline-none">
-                        <ActionItem id="open" onAction={() => router.push(`/images/${rowId}?${searchParams.toString()}`, { scroll: false })}>
+                        <ActionItem id="open" onAction={() => router.push(`/background-remover/${rowId}?${searchParams.toString()}`, { scroll: false })}>
                             <div className="flex items-center gap-2">
                                 <LuArrowRight className="size-4" />
                                 <span>Open</span>

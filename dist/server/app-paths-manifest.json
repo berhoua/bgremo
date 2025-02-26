@@ -1,4 +1,4 @@
 {
   "/(site)/page": "app/(site)/page.js",
-  "/(site)/images/page": "app/(site)/images/page.js"
+  "/(site)/background-remover/page": "app/(site)/background-remover/page.js"
 }

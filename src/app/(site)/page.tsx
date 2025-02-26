@@ -34,8 +34,8 @@ export default function HomePage() {
                             height: imgElement.height,
                             width: imgElement.width,
                         });
-                        // Redirect to images page after successful upload
-                        router.push('/images');
+                        // Redirect to background-remover page after successful upload
+                        router.push('/background-remover');
                     }
                 }
             })
