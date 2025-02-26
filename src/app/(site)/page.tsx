@@ -166,7 +166,7 @@ export default function HomePage() {
                             </div>
                             
                             <div className="space-y-2">
-                                <h2 className="text-2xl font-bold text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-[#6366F1] to-[#EC4899]">
+                                <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#6366F1] to-[#EC4899]">
                                     Drop your image here
                                 </h2>
                                 <p className="text-sm text-gray-600">

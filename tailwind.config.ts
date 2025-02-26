@@ -10,7 +10,9 @@ const config: Config = {
     'image_ymZOY',
     'banner1_OkOk1',
     'banner2_vEFCM',
-    'banner3_j1JMk'
+    'banner3_j1JMk',
+    'text-gray-900',
+    'text-transparent'
   ],
   darkMode: ["class"],
   theme: {
